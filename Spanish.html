@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="draft.css">
+    <title>Spanish</title>
+    <style>
+        #header {
+            width: 100%;
+            text-align: center; 
+            border-radius:5px;
+        }
+        #centerbody {
+            border:2px outset rgb(47, 71, 59); 
+            text-align:center; 
+            width:70%;
+            height:180px;
+        }
+        .centerred {
+            text-align:center; 
+            color:rgb(16, 2, 48)
+        }
+    </style>
+</head> 
+
+<script>
+async function loadDeezerCharts() {
+  const response = await fetch('https://api.deezer.com/chart/es/tracks');
+  const data = await response.json();
+  const container = document.getElementById('deezerCharts');
+
+  data.data.slice(0, 5).forEach(track => {
+    const trackDiv = document.createElement('div');
+    trackDiv.innerHTML = `
+      <p><strong>${track.artist.name}</strong> - ${track.title}</p>
+      <audio controls src="${track.preview}"></audio>
+    `;
+    container.appendChild(trackDiv);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", loadDeezerCharts);
+  </script>
+
+<body>
+    <div id="header">
+        <h1>Music</h1>
+        <div class="tabs">
+            <a href="Index.html" class="tab">Home</a>
+            <a href="Spanish.html" class="tab active">Spanish</a>
+            <a href="Russian.html" class="tab">Russian</a>
+            <a href="Italian.html" class="tab">Italian</a>
+        </div>
+    </div>
+
+<div class="section-group">
+    <div class="three-columns">
+        <div class="column">
+            <h3>Popular Genres</h3>
+            <ul>
+                <li><a href="https://open.spotify.com/playlist/37i9dQZF1DX7SeoIaFyTmA?si=1v0Aeqw9REmSZnEShVK0CQ" target="_blank">Salsa</a></li>
+                <li><a href="https://open.spotify.com/playlist/37i9dQZF1DWY7IeIP1cdjF?si=8rsD9iC8Qh-kbUWBJUbtLg" target="_blank">Reggaeton</a></li>
+                <li><a href="https://open.spotify.com/playlist/37i9dQZF1DX65py6HnnlE1?si=4Mh4Nw5URECwa3T7dlpJSg" target="_blank">Bachata</a></li>
+                <li><a href="https://open.spotify.com/playlist/37i9dQZF1DWVAa4Dwc5f7L?si=Jca3HOJgQKWqNQwRhocr9Q" target="_blank">Merengue</a></li>
+                <li><a href="https://open.spotify.com/playlist/37i9dQZF1DX1QnNyJOBQBv?si=AzPpqucdTIa2nbiClsRlIA" target="_blank">Latin Pop</a></li>
+            </ul>
+          </div>
+          <div class="column">
+            <h3>Brief History</h3>
+            <p>Explore how these genres influence modern music trends across Latin America and the world.</p>
+          </div>
+          <div class="column">
+            <h3>Common Instruments</h3>
+            <ul>
+                <li>Charango</li>
+                <li>Maracas</li>
+                <li>Ocarina</li>
+                <li>Bongó</li>
+                <li>Guitar</li>
+                <li>Congas</li>
+                <li>Cajón</li>
+              </ul>
+          </div>
+        </div>
+      
+        <div class="column">
+          <h3>Interesting Facts</h3>
+          <p>Blah Blah Blah</p>
+        </div>
+
+      
+        <div class="column full-width-heading">
+          <h3>Explore Spotify!</h3>
+          <p>Top Artists and Latin New Releases</p>
+        </div>
+
+      <div class="grid-20">
+        <div class="grid-box"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/4q3ewBCX7sLwd24euuV69X?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+        <div class="grid-box"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/2nszmSgqreHSdJA3zWPyrW?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+        <div class="grid-box"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/790FomKkXshlbRYZFtlgla?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+        <div class="grid-box"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/4wLXwxDeWQ8mtUIRPxGiD6?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+        <div class="grid-box"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/7okwEbXzyT2VffBmyQBWLz?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+        <div class="grid-box"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/4VMYDCV2IEDYJArk749S6m?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+        <div class="grid-box"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/7qG3b048QCHVRO5Pv1T5lw?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+        <div class="grid-box"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/0EmeFodog0BfCgMzAIvKQp?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+        <div class="grid-box"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/6IE6z7DcZIT4Ml3Fh5Ivch?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+      </div>
+
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX1hVRardJ30X?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+      <div class="column">
+        <h3>More Resources</h3>
+        <p>Blah Blah Blah</p>
+      </div>
+
+    <div id="footer">
+            <p>© Holmes Ray Guerrera 2025</p>
+    </div>
+</body> 
+</html>
