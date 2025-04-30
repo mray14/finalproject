@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Spotify Song</title>
+</head>
+<body>
+  <h1>Random Song Generator</h1>
+  <button onclick="getRandomSong()">Get Random Song</button>
+  <div id="song-info"></div>
+
+  <script>
+    const accessToken = 'BQA5wUGDXgdTGbz_3fIFUEPddk0ABRZwyhqowjeJXZW5ZZBR-7Mk1DplSosN-NL1D-XXQKbQFXsC4CYgJhOTa2YOLTF7NiUIOHhI48TsScz-Wkd2ut76IaPrGN_rOx_ABjpsA8l8Jm0XrA46mB9J8UlYcXl5LadNIYdu0DS6gvrFQCgXKWCVJDqUU1EFUbALwpoOC9A0sZ-Mia71XMv8FboqKpCtGlO3jRVSXfgJe4FwSSMFKdhhHY1knQ'; // Replace with your actual access token
+
+    function getRandomLetter() {
+      const letters = 'abcdefghijklmnopqrstuvwxyz';
+      return letters[Math.floor(Math.random() * letters.length)];
+    }
+
+    async function getRandomSong() {
+      const query = getRandomLetter();
+      const offset = Math.floor(Math.random() * 100);
+      const url = `https://api.spotify.com/v1/search?q=${query}&type=track&limit=1&offset=${offset}`;
+
+      const response = await fetch(url, {
+        headers: {
+          'Authorization': 'Bearer ' + accessToken
+        }
+      });
+
+      const data = await response.json();
+      const track = data.tracks.items[0];
+
+      if (track) {
+        document.getElementById('song-info').innerHTML = `
+          <img src="${track.album.images[0].url}" width="300"><br>
+          <strong>${track.name}</strong><br>
+          Artist: ${track.artists[0].name}<br>
+          <a href="${track.external_urls.spotify}" target="_blank">Play on Spotify</a><br>
+          ${track.preview_url ? `<audio controls src="${track.preview_url}"></audio>` : 'No preview available'}
+        `;
+      } else {
+        document.getElementById('song-info').innerText = 'No track found. Try again!';
+      }
+    }
+  </script>
+</body>
+</html>
